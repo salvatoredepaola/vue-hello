@@ -1,19 +1,30 @@
-<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-<div id="app">
-    <h1> {{ message }} </h1>
-    <p>{{testo}}</p>
-</div>
+</head>
+<body>
 
-<script>
-    const { createApp } = Vue
+    <div id="app">
 
-    createApp({
-        data() {
-            return {
-                message: 'Hello Vue!',
-                testo: 'testo',
-            }
-        }
-    }).mount('#app')
-</script>
+        <h1 v-bind:class="titoloprincipale"> {{ message }} </h1>
+
+        <p>{{testo}}</p>
+
+        <input v-model="testo">  <!-- input 'testo' cambia anche {{testo}}-->
+        <br>
+        <img :src="immagine">
+    </div>
+
+    <script src="./js/main.js"></script>
+
+</body>
+</html>
+
+
